@@ -36,4 +36,5 @@ export class Routine {
     hasDescription(): boolean {
         return Boolean(this.description && this.description.trim().length > 0);
     }
+    //JPBello
 }
