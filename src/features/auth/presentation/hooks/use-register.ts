@@ -28,6 +28,11 @@ export function useRegister() {
       return;
     }
 
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+      setError("Ingresa un correo electrónico válido");
+      return;
+    }
+    
     if (password !== confirmPassword) {
       setError("Las contraseñas no coinciden");
       return;

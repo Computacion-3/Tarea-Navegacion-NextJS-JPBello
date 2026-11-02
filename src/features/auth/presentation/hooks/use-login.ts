@@ -17,11 +17,19 @@ export function useLogin() {
 
     setError("");
 
+
     if (!email.trim() || !password.trim()) {
       setError("Todos los campos son obligatorios");
       return;
     }
 
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+      setError("Ingresa un correo electrónico válido");
+      return;
+    }
+
+    // Navegar a la página de rutinas
     router.replace("/routines");
   };
 
